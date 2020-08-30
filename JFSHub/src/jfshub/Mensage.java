@@ -33,6 +33,10 @@ public abstract class Mensage {
                 JOptionPane.showMessageDialog(null, "Esta función aún no está "
                 + "disponible.", "Usuario privilegiado", icon);
                 break;
+            case SERVER_TEST:
+                JOptionPane.showMessageDialog(null, "Comprobando conexiones.\n"
+                + "Esto tardará un instante.", "Comprobando conexiones", icon);
+                break;
         }
     }
 
@@ -41,6 +45,7 @@ public abstract class Mensage {
         ERR_SERVER,
         ERR_USER,
         ERR_PRIV_USER,
+        SERVER_TEST,
         
     }
 

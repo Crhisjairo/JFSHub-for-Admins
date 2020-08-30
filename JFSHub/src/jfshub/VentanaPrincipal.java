@@ -1,14 +1,18 @@
 package jfshub;
 
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import jfshub.Datos.DataCode;
+import net.kronos.rkon.core.Rcon;
 
 /**
  *
  * @author Crhistian C
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
+
+    static Rcon rcon;
 
     /**
      * Creates new form VentanaPrincipal
@@ -57,37 +61,67 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         txtCorreo = new javax.swing.JLabel();
         labelCorreo = new javax.swing.JLabel();
         panelLosJFS = new javax.swing.JPanel();
+        txtEstadoServidorLabel = new javax.swing.JLabel();
+        txtEstadoServidor = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        txtEstadoModificacionArchivos = new javax.swing.JLabel();
+        btAdministrar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
+        panelGeneral.setBackground(new java.awt.Color(255, 255, 255));
+        panelGeneral.setForeground(new java.awt.Color(0, 0, 0));
+
+        txt_bienvenida.setBackground(new java.awt.Color(255, 255, 255));
         txt_bienvenida.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        txt_bienvenida.setForeground(new java.awt.Color(0, 0, 0));
         txt_bienvenida.setText("TXT_BIENVENIDA");
 
+        bInformacionGeneral.setBackground(new java.awt.Color(0, 0, 0));
+        bInformacionGeneral.setForeground(new java.awt.Color(255, 255, 255));
         bInformacionGeneral.setText("Información general");
+        bInformacionGeneral.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         bInformacionGeneral.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bInformacionGeneralActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Los JFS");
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Los JFS [Minecraft Server]");
+        jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(102, 102, 102));
+        jButton3.setForeground(new java.awt.Color(204, 204, 204));
         jButton3.setText("DESHABILITADO");
+        jButton3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
+        jButton4.setBackground(new java.awt.Color(102, 102, 102));
+        jButton4.setForeground(new java.awt.Color(204, 204, 204));
         jButton4.setText("DESHABILITADO");
+        jButton4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
+        jButton5.setBackground(new java.awt.Color(102, 102, 102));
+        jButton5.setForeground(new java.awt.Color(204, 204, 204));
         jButton5.setText("DESHABILITADO");
+        jButton5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         paneles.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         paneles.setLayout(new java.awt.CardLayout());
+
+        panelDefault.setBackground(new java.awt.Color(100, 100, 100));
 
         txtPanelDefault.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         txtPanelDefault.setText("Elige el panel que quieras editar");
@@ -111,45 +145,61 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         paneles.add(panelDefault, "card4");
 
+        panelInformacion.setBackground(new java.awt.Color(100, 100, 100));
+
         txtInfo.setFont(new java.awt.Font("Dialog", 2, 10)); // NOI18N
+        txtInfo.setForeground(new java.awt.Color(255, 255, 255));
         txtInfo.setText("Estamos trabajando para que puedas editar tus datos desde esta pantalla *Inserte emoji sonriendo aquí*.");
 
+        txtNombre.setForeground(new java.awt.Color(255, 255, 255));
         txtNombre.setText("Nombre:");
 
+        txtApellido.setForeground(new java.awt.Color(255, 255, 255));
         txtApellido.setText("Apellido:");
 
+        txtEdad.setForeground(new java.awt.Color(255, 255, 255));
         txtEdad.setText("Edad:");
 
+        txtId.setForeground(new java.awt.Color(255, 255, 255));
         txtId.setText("Número de identificación:");
 
+        txtPais.setForeground(new java.awt.Color(255, 255, 255));
         txtPais.setText("Nacionalidad:");
 
         labelNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelNombre.setForeground(new java.awt.Color(255, 255, 255));
         labelNombre.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelNombre.setText("NOMBRE");
 
         labelApellido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelApellido.setForeground(new java.awt.Color(255, 255, 255));
         labelApellido.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelApellido.setText("APELLIDO");
 
         labelEdad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelEdad.setForeground(new java.awt.Color(255, 255, 255));
         labelEdad.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelEdad.setText("EDAD");
 
         labelPais.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelPais.setForeground(new java.awt.Color(255, 255, 255));
         labelPais.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelPais.setText("PAIS");
 
+        labelId.setForeground(new java.awt.Color(255, 255, 255));
         labelId.setText("ID");
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Courier New", 0, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("*Inserte información importante aquí, desarrollador kbro*");
         jLabel1.setToolTipText("");
 
+        txtCorreo.setForeground(new java.awt.Color(255, 255, 255));
         txtCorreo.setText("Correo registrado:");
 
         labelCorreo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelCorreo.setForeground(new java.awt.Color(255, 255, 255));
         labelCorreo.setText("CORREO");
 
         javax.swing.GroupLayout panelInformacionLayout = new javax.swing.GroupLayout(panelInformacion);
@@ -233,24 +283,107 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         paneles.add(panelInformacion, "card2");
 
-        jLabel2.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        jLabel2.setText("*Inserte información de relación del usuario con Los JFS*");
+        panelLosJFS.setBackground(new java.awt.Color(100, 100, 100));
+        panelLosJFS.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panelLosJFS.setForeground(new java.awt.Color(255, 255, 255));
+        panelLosJFS.setFocusable(false);
+
+        txtEstadoServidorLabel.setBackground(new java.awt.Color(0, 0, 0));
+        txtEstadoServidorLabel.setForeground(new java.awt.Color(255, 255, 255));
+        txtEstadoServidorLabel.setText("Estado del servidor RCON: ");
+
+        txtEstadoServidor.setBackground(new java.awt.Color(0, 0, 0));
+        txtEstadoServidor.setForeground(new java.awt.Color(255, 255, 255));
+        txtEstadoServidor.setText("Desconocido");
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Estado de modificación de archivos:");
+
+        jScrollPane1.setBorder(null);
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setColumns(1);
+        jTextArea1.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(7);
+        jTextArea1.setText("Solo 1 administrador puede modificar, crear y borrar archivos del servidor a la vez [Aún no disponible].\nMás de 2 administradores pueden ejecutar comandos en la consola\ndel servidor a la vez.\nTODOS los administradores serán informados en tiempo real de los\ncomandos que uses en la consola.\nVerifica las conexiones primero.");
+        jTextArea1.setBorder(null);
+        jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTextArea1.setFocusable(false);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        txtEstadoModificacionArchivos.setForeground(new java.awt.Color(204, 204, 204));
+        txtEstadoModificacionArchivos.setText("DESHABILITADO");
+
+        btAdministrar.setBackground(new java.awt.Color(0, 0, 0));
+        btAdministrar.setForeground(new java.awt.Color(255, 255, 255));
+        btAdministrar.setText("Administrar");
+        btAdministrar.setEnabled(false);
+        btAdministrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAdministrarActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Verificar conexiones");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelLosJFSLayout = new javax.swing.GroupLayout(panelLosJFS);
         panelLosJFS.setLayout(panelLosJFSLayout);
         panelLosJFSLayout.setHorizontalGroup(
             panelLosJFSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLosJFSLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btAdministrar)
+                .addGap(272, 272, 272))
+            .addGroup(panelLosJFSLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(panelLosJFSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelLosJFSLayout.createSequentialGroup()
+                        .addGroup(panelLosJFSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEstadoServidorLabel)
+                            .addComponent(jLabel2))
+                        .addGap(79, 79, 79)
+                        .addGroup(panelLosJFSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEstadoModificacionArchivos)
+                            .addGroup(panelLosJFSLayout.createSequentialGroup()
+                                .addComponent(txtEstadoServidor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                                .addComponent(jButton1))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
         panelLosJFSLayout.setVerticalGroup(
             panelLosJFSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLosJFSLayout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(jLabel2)
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addGroup(panelLosJFSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelLosJFSLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64)
+                        .addGroup(panelLosJFSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtEstadoServidorLabel)
+                            .addComponent(txtEstadoServidor))
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLosJFSLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(panelLosJFSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtEstadoModificacionArchivos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(btAdministrar)
+                .addGap(45, 45, 45))
         );
 
         paneles.add(panelLosJFS, "card3");
@@ -262,11 +395,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(panelGeneralLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addGroup(panelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2)
-                    .addComponent(bInformacionGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bInformacionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(paneles, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -287,15 +420,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addContainerGap(23, Short.MAX_VALUE))
                     .addGroup(panelGeneralLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(bInformacionGeneral)
-                        .addGap(46, 46, 46)
-                        .addComponent(jButton2)
-                        .addGap(52, 52, 52)
-                        .addComponent(jButton3)
-                        .addGap(57, 57, 57)
-                        .addComponent(jButton4)
+                        .addComponent(bInformacionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47))))
         );
 
@@ -323,7 +456,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelDefault.setVisible(false);
         panelInformacion.setVisible(false);
         panelLosJFS.setVisible(true);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btAdministrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdministrarActionPerformed
+        setVisible(false);
+        VentanaAdministrar ventana = new VentanaAdministrar();
+    }//GEN-LAST:event_btAdministrarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        comprobarEstadoServidores();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,17 +496,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                new VentanaPrincipal().setVisible(true);                
             }
+            
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bInformacionGeneral;
+    private javax.swing.JButton btAdministrar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -371,6 +519,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel labelApellido;
     private javax.swing.JLabel labelCorreo;
     private javax.swing.JLabel labelEdad;
@@ -385,6 +535,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel txtApellido;
     private javax.swing.JLabel txtCorreo;
     private javax.swing.JLabel txtEdad;
+    public static javax.swing.JLabel txtEstadoModificacionArchivos;
+    public static javax.swing.JLabel txtEstadoServidor;
+    private javax.swing.JLabel txtEstadoServidorLabel;
     private javax.swing.JLabel txtId;
     private javax.swing.JLabel txtInfo;
     private javax.swing.JLabel txtNombre;
@@ -409,10 +562,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void propiedadesJFrame() {
         ImageIcon img = new ImageIcon(JFSHub.class.getResource("images/icono1.png"));
         setIconImage(img.getImage().getScaledInstance(14, 15, Image.SCALE_DEFAULT));
-        
+
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("[JFS Hub] " + Datos.get(DataCode.NOMBRE));
         setVisible(true);
+
+    }
+
+    private void comprobarEstadoServidores() {        
+        //confirmar conexión con RCON//
+        try {
+            rcon = new Rcon("192.168.0.219", 24036, "Lamamademena".getBytes());
+            txtEstadoServidor.setText("Disponible");
+            txtEstadoServidor.setForeground(Color.green);
+            rcon.disconnect();            
+            btAdministrar.setEnabled(true);
+        } catch (Exception e) {
+            System.out.println("No se pudo verificar conexiôn con Rcon: " + e);
+            txtEstadoServidor.setText("Indisponible o deshabilitado\n");
+            txtEstadoServidor.setForeground(Color.red);
+        }
+        
+        //confirmar conexión con FTPs//
     }
 }

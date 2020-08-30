@@ -20,7 +20,7 @@ public class JFSHub extends javax.swing.JFrame {
     public JFSHub() {
         initComponents();
         propiedadesJFrame();
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -32,7 +32,6 @@ public class JFSHub extends javax.swing.JFrame {
         imagenJFS = new java.awt.Label();
         txtPass = new javax.swing.JLabel();
         txtUltimaVersion = new javax.swing.JLabel();
-        bUsuarioPrivilegiado = new javax.swing.JButton();
         bIniciarSesion = new javax.swing.JButton();
         bRegistrarse = new javax.swing.JButton();
         Usuario = new javax.swing.JTextField();
@@ -40,6 +39,8 @@ public class JFSHub extends javax.swing.JFrame {
         Pass = new javax.swing.JPasswordField();
         txtUsuario = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         panelRegistrarse = new javax.swing.JPanel();
         bAtras = new javax.swing.JButton();
         txtNombreUsuarioReg = new javax.swing.JLabel();
@@ -77,13 +78,6 @@ public class JFSHub extends javax.swing.JFrame {
         txtUltimaVersion.setFont(new java.awt.Font("Dialog", 2, 10)); // NOI18N
         txtUltimaVersion.setForeground(new java.awt.Color(51, 153, 255));
         txtUltimaVersion.setText("Última versión: Conectando...");
-
-        bUsuarioPrivilegiado.setText("Usuario privilegiado");
-        bUsuarioPrivilegiado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bUsuarioPrivilegiadoActionPerformed(evt);
-            }
-        });
 
         bIniciarSesion.setText("Iniciar sesión");
         bIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +125,14 @@ public class JFSHub extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 2, 10)); // NOI18N
         jLabel1.setText("Versión actual: Pre-alpha 0.0.1");
 
+        jLabel3.setFont(new java.awt.Font("iCiel Gotham Medium", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("para administradores");
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 2, 10)); // NOI18N
+        jLabel4.setText("Duar maricón si dice que se ve antiguo el programa. La weá funciona. ctmr ");
+        jLabel4.setMinimumSize(new java.awt.Dimension(359, 14));
+
         javax.swing.GroupLayout panelIniciarSesionLayout = new javax.swing.GroupLayout(panelIniciarSesion);
         panelIniciarSesion.setLayout(panelIniciarSesionLayout);
         panelIniciarSesionLayout.setHorizontalGroup(
@@ -153,29 +155,35 @@ public class JFSHub extends javax.swing.JFrame {
                                     .addComponent(Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(panelIniciarSesionLayout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(imagenJFS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(246, 246, 246)
+                        .addComponent(jLabel3))
                     .addGroup(panelIniciarSesionLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1))
                     .addGroup(panelIniciarSesionLayout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(imagenJFS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelIniciarSesionLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(txtUltimaVersion)))
-                .addContainerGap(191, Short.MAX_VALUE))
+                        .addComponent(txtUltimaVersion))
+                    .addGroup(panelIniciarSesionLayout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(165, Short.MAX_VALUE))
             .addGroup(panelIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelIniciarSesionLayout.createSequentialGroup()
-                    .addContainerGap(508, Short.MAX_VALUE)
-                    .addGroup(panelIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(bUsuarioPrivilegiado, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(bAyuda, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addContainerGap(593, Short.MAX_VALUE)
+                    .addComponent(bAyuda)
                     .addContainerGap()))
         );
         panelIniciarSesionLayout.setVerticalGroup(
             panelIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIniciarSesionLayout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(imagenJFS, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addGap(24, 24, 24)
+                .addComponent(imagenJFS, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addGroup(panelIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUsuario)
                     .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,16 +195,16 @@ public class JFSHub extends javax.swing.JFrame {
                 .addGroup(panelIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bRegistrarse)
                     .addComponent(bIniciarSesion))
-                .addGap(97, 97, 97)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtUltimaVersion)
-                .addGap(12, 12, 12))
+                .addGap(11, 11, 11))
             .addGroup(panelIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelIniciarSesionLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(bUsuarioPrivilegiado)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 426, Short.MAX_VALUE)
+                    .addContainerGap(464, Short.MAX_VALUE)
                     .addComponent(bAyuda)
                     .addContainerGap()))
         );
@@ -342,7 +350,7 @@ public class JFSHub extends javax.swing.JFrame {
                         .addComponent(txtApellidoReg)
                         .addGap(18, 18, 18)
                         .addComponent(apellidoReg, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addComponent(txtEdadReg)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(edadReg, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -448,16 +456,6 @@ public class JFSHub extends javax.swing.JFrame {
     private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UsuarioActionPerformed
-
-    /**
-     * Al apretar, se abrirâ una ventana que permite iniciar sesiôn a los
-     * usuarios privilegiados.
-     *
-     * @param evt ActionEvent.
-     */
-    private void bUsuarioPrivilegiadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bUsuarioPrivilegiadoActionPerformed
-        Mensage.ventana(CodigoMensage.ERR_PRIV_USER, 1);
-    }//GEN-LAST:event_bUsuarioPrivilegiadoActionPerformed
 
     /**
      * Al apretar ENTER en pass.
@@ -653,12 +651,13 @@ public class JFSHub extends javax.swing.JFrame {
     private javax.swing.JButton bIniciarSesion;
     private javax.swing.JButton bRegistrarReg;
     private javax.swing.JButton bRegistrarse;
-    private javax.swing.JButton bUsuarioPrivilegiado;
     private javax.swing.JTextField correoReg;
     private javax.swing.JTextField edadReg;
     private java.awt.Label imagenJFS;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nombreReg;
@@ -692,8 +691,6 @@ public class JFSHub extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
 
-        
-
         //Panel Registar//
         paisReg.setSelectedIndex(4);
         //**************//
@@ -707,7 +704,7 @@ public class JFSHub extends javax.swing.JFrame {
         Datos.closeConnection();
     }
 
-    private static void getDataDB () {
+    private static void getDataDB() {
         try {
             Datos.connectToDataBase();
             txtUltimaVersion.setText("Última versión: " + Datos.checkUpdate());
@@ -716,6 +713,7 @@ public class JFSHub extends javax.swing.JFrame {
             txtUltimaVersion.setText("No se pudo establecer conexión con la base"
                     + " de datos.");
         }
-        
+
     }
+
 }
