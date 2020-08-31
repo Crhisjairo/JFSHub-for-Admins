@@ -44,8 +44,10 @@ public class VentanaAdministrar extends javax.swing.JFrame {
         setResizable(false);
 
         txtConsola.setEditable(false);
+        txtConsola.setBackground(new java.awt.Color(0, 0, 0));
         txtConsola.setColumns(20);
         txtConsola.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        txtConsola.setForeground(new java.awt.Color(255, 255, 255));
         txtConsola.setRows(5);
         jScrollPane1.setViewportView(txtConsola);
 
@@ -158,7 +160,7 @@ public class VentanaAdministrar extends javax.swing.JFrame {
     }//GEN-LAST:event_btInsertarActionPerformed
 
     private void bLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLimpiarActionPerformed
-        txtConsola.append("Se limpió la consola.\n");
+        txtConsola.setText("Se limpió la consola.\n");
     }//GEN-LAST:event_bLimpiarActionPerformed
 
     private void txtComandoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtComandoKeyPressed
@@ -224,13 +226,13 @@ public class VentanaAdministrar extends javax.swing.JFrame {
 
     private void conectarRcon() {
         try {
-            rcon = new Rcon("192.168.0.219", 24036, "Lamamademena".getBytes());
+            rcon = new Rcon("jfs.sytes.net", 24036, "Lamamademena".getBytes());
             //Ensenar confirmacion de conexiôn en consola//
             txtConsola.append("¡Conexión exitosa con el servidor!\n");
         } catch (Exception e) {
             System.out.println("Error: " + e);
             txtConsola.append("No se pudo conectar con el servidor.\n"
-                    + "Intenta enviar un comando para reintentar conectar.");
+                    + " Intenta enviar un comando para reintentar conectar.");
         }
 
     }

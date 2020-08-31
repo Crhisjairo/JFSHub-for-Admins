@@ -1,0 +1,6 @@
+Para asegurar el buen funcionamiento del programa:
+	- Mueve la carpeta "JFSHub" en "C:\Archivos de programa".
+	- Crea y mueve el acceso directo de "JFS Hub for Admins.jar" al escritorio.
+	
+	
+Pronto un instalador estará disponible.

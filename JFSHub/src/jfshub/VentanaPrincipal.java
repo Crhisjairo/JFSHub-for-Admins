@@ -121,10 +121,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         paneles.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         paneles.setLayout(new java.awt.CardLayout());
 
-        panelDefault.setBackground(new java.awt.Color(100, 100, 100));
+        panelDefault.setBackground(new java.awt.Color(51, 51, 51));
 
-        txtPanelDefault.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        txtPanelDefault.setText("Elige el panel que quieras editar");
+        txtPanelDefault.setFont(new java.awt.Font("Dialog", 2, 24)); // NOI18N
+        txtPanelDefault.setText("Elige el panel que quieras editar ");
 
         javax.swing.GroupLayout panelDefaultLayout = new javax.swing.GroupLayout(panelDefault);
         panelDefault.setLayout(panelDefaultLayout);
@@ -303,14 +303,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setBorder(null);
 
         jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
         jTextArea1.setColumns(1);
         jTextArea1.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(7);
         jTextArea1.setText("Solo 1 administrador puede modificar, crear y borrar archivos del servidor a la vez [Aún no disponible].\nMás de 2 administradores pueden ejecutar comandos en la consola\ndel servidor a la vez.\nTODOS los administradores serán informados en tiempo real de los\ncomandos que uses en la consola.\nVerifica las conexiones primero.");
-        jTextArea1.setBorder(null);
+        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextArea1.setFocusable(false);
         jScrollPane1.setViewportView(jTextArea1);
@@ -381,7 +381,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(panelLosJFSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtEstadoModificacionArchivos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(btAdministrar)
                 .addGap(45, 45, 45))
         );
@@ -400,20 +400,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bInformacionGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 32, Short.MAX_VALUE)
                 .addComponent(paneles, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
             .addGroup(panelGeneralLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(23, 23, 23)
                 .addComponent(txt_bienvenida)
-                .addContainerGap(676, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGeneralLayout.setVerticalGroup(
             panelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGeneralLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(33, 33, 33)
                 .addComponent(txt_bienvenida)
-                .addGap(48, 48, 48)
+                .addGap(49, 49, 49)
                 .addGroup(panelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGeneralLayout.createSequentialGroup()
                         .addComponent(paneles, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -573,7 +573,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void comprobarEstadoServidores() {        
         //confirmar conexión con RCON//
         try {
-            rcon = new Rcon("192.168.0.219", 24036, "Lamamademena".getBytes());
+            rcon = new Rcon("jfs.sytes.net", 24036, "Lamamademena".getBytes());
             txtEstadoServidor.setText("Disponible");
             txtEstadoServidor.setForeground(Color.green);
             rcon.disconnect();            
