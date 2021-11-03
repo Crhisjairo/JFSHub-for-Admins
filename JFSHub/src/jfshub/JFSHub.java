@@ -228,6 +228,8 @@ public class JFSHub extends javax.swing.JFrame {
         } else {
             iniciar();
         }
+        
+        iniciar();
     }//GEN-LAST:event_bIniciarSesionActionPerformed
 
     private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
@@ -314,11 +316,12 @@ public class JFSHub extends javax.swing.JFrame {
     }
 
     private void iniciar() {
-        JOptionPane.showMessageDialog(null, "¡Bienvenido "
-                + Datos.get(DataCode.NOMBRE) + "!", "Inicio de sesión", 1);
+        //JOptionPane.showMessageDialog(null, "¡Bienvenido "
+         //       + Datos.get(DataCode.NOMBRE) + "!", "Inicio de sesión", 1);
         setVisible(false);
         VentanaPrincipal ventana = new VentanaPrincipal();
-        Datos.closeConnection();
+        
+        //Datos.closeConnection();
     }
 
     private static void getDataDB() {

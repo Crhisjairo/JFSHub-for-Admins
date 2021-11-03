@@ -19,7 +19,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
-        cargarDatos();
+        //cargarDatos();
         propiedadesJFrame();
     }
 
@@ -565,7 +565,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("[JFS Hub] " + Datos.get(DataCode.NOMBRE));
+        //setTitle("[JFS Hub] " + Datos.get(DataCode.NOMBRE));
         setVisible(true);
 
     }
